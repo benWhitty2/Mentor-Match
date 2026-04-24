@@ -1,3 +1,6 @@
+# Description
+This program is a web application designed to be used by a university to match higher year mentors to lower year mentees. Where both parties have a choice over who they are matched with. This is accomplished by allowing all mentees to send machine requests to mentors who can then accept them at their discretion.
+
 Commands for installing/starting the program:
 git clone git@git.shefcompsci.org.uk:com1001-2024-25/team45/project.git
 cd project
