@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <title>veiw resets page</title>
+    
+    <link rel="stylesheet" href="login.css">
+
+    <meta name="author" content="Ben Whittaker">
+    <%= erb :"common/header" %>
+</head>
+
+
+<body>
+  <section>
+    <div clas 6s="centerOfScreen">
+      <h2>Resets List</h2>
+      <br>
+      <% if @applicants.count > 0 %>
+        <table>
+          <tr>
+          <th>Username</th>
+        </tr>
+    <% @applicants.each do |user| %>
+      <tr>
+        <td><%= h user[0] %></td>
+        <td>
+          <form id="resetPass" action="view-resets" method="post">
+            <input type="text" id="newPassword" name="newPassword" placeholder="new pass">
+            <input type="hidden" name="type" value=<%= h user[2] %>>
+            <button name="reset" value=<%= h user[1] %> class="regButton">Set</button>
+          </form>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+      <% else %>
+        <p>There are no current mentees on the waiting list</p>
+      <% end %>
+    </div>
+  </section>
+</body>

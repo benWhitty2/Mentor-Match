@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <title>registration page</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="profile_creation.css">
+    <meta name = "author" content="Sophie Thompson">
+    
+</head>
+
+<body>
+    <nav>
+    <div class = "menu">
+      <a href= "" id = "menuButton">Menu</a>
+      <div class = "ddcontent">
+        <a href = "/index">Home</a>
+        <a href = "/register">Register</a>
+        <a href = "/profile">Profile</a> 
+      </div>
+    </div>
+      <a href = "/login" id = "loginButton"><p><%= @loginSignOut%></p></a>
+    </nav>
+    <header>
+      <h2>Profile Creation</h2>
+    </header>
+    <% if !@form_was_submitted || @empty_error %>
+    <div class="form-wrapper">
+    <form method = "post" action = "/profile_creation">
+        <label for="forename">Forename</label><br>
+        <input type="text" id="forename" name="forename"><br>
+        <label for="surname">Surname</label><br>
+        <input type="text" id="surname" name="surname"><br>
+        <label for="desc">Description</label><br>
+        <input type="text" id="desc" name="desc"><br>
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="Male" <% if @gender == "Male" %>selected<% end %>>Male</option>
+          <option value="Female" <% if @gender == "Female" %>selected<% end %>>Female</option>
+          <option value="Other" <% if @gender == "Other" %>selected<% end %>>Other</option>
+        </select><br>
+        <label for="date_of_birth">Date of Birth</label><br>
+        <input type="date" id="date_of_birth" name="date_of_birth"><br>
+        <label for="course">Course</label><br>
+        <input type="text" id="course" name="course"><br>
+        <% if @userType == "Mentor" %>
+          <label for="year_of_study">Year of Study</label><br>
+          <input type="number" id="year_of_study" name="year_of_study" min="2" max="10"><br>
+        <% else %>
+          <input type="hidden" name="year_of_study" value="1">
+        <% end %>
+        <input type="submit" value="Submit">
+        <div class="error">
+        <% if @empty_error && @form_was_submitted %>
+          <p><br /><strong><%= @empty_error %></strong></p>
+        <% end %>
+        <% if @integer_error && @form_was_submitted %>
+          <p><br /><strong><%= @integer_error %></strong></p>
+        <% end %>
+        </div>
+    </form>
+    </div>
+    <% end %>
+</body>
+<!-- This is the profile creation page. Once the user gets past registration of username, password and email, this is where they
+input other important data for their profile. If the user is a mentee, their year of study will automatically be registered as 1
+, and the input for this field will be hidden. Once submitted without any errors, the page will redirect to their newly created profile
+ -->
+</html>

@@ -1,0 +1,80 @@
+/*sophies css*/
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: white;
+  color: #221c35;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #453951;
+  border: solid black;
+  border-width: 0.5px 1px 1px 1px;
+  padding: 0% 0% 0% 2%;
+  height: 15%;
+  display: flex;
+  font-size: xxx-large;
+  align-items: center;
+}
+p a {
+  width: 100%;
+}
+.form {
+  width:300px;
+  height: auto;
+  text-align: center;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #3c1361;
+  color: white;
+  padding: 30px;
+  box-shadow: 0px 3px 7px rgba(0,0,0,0.3);
+  position: absolute;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  
+}
+form input {
+  background-color: white;
+  padding: 10px 10px;
+  margin: 10px 0;
+  width: 100%;
+  border-style: solid;
+  box-sizing: border-box;
+}
+form input:hover {
+  border-style: inset;
+}
+
+form label {
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+}
+
+
+
+/* terms */
+
+#terms {
+  background-color: white;
+  padding: 15px 8px 15px 8px;
+  margin-top: 150px;
+  width: 80%;
+  text-align: left;
+}
+
+.error {
+  color: red;
+}

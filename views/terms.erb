@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Terms and Conditions</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name = "author" content="Sophie Thompson">
+    <%= erb :"common/header" %> 
+  </head>
+  <body>
+    <section>
+    </section>
+    <form id = "terms" action = "/terms_process" method = "POST">
+      <h2>Terms and Conditions</h2>
+      <p>By accepting these conditions, you gain rights to use this website for the duration or your Studies at
+      the University of Sheffield. This website is intended for the use of finding matches between mentors and mentees 
+      to encourage collaboration and help with your studies.<br><br>
+      <strong>Eligibility:</strong> 
+      This platform is reserved for University of Sheffield students. First years can become mentees, and second years and above become mentors.
+      By using this website, you confirm that the information you provide is accurate. <br>
+      <strong>Responsibilities:</strong>
+      When using this website you must agree to: 
+      - be respectful of every student you come across
+      - not use this website for inappropriate activities
+      - provide accurate, up-to-date information<br>
+      <strong>Data Protection:</strong>
+      Your data is used purely for mentee, mentorship matching. We will not share any data with third parties. <br>
+      <strong>Termination</strong>
+      If you violate these conditions, you will be put under review and have the chance to argue your case. If your argument is unfavorable, you
+      will be subject to suspension or a ban.<br>
+      <strong>Contact: </strong> 
+      If you wish to know more of how our website works or clarification on our terms, feel free to contact us at commatches@sheffield.ac.uk </p>
+      <p>     <input type="hidden" name="accepted" value="false"> 
+      <input type="submit" name = "accepted" value="Accept">
+      <input type="submit" name = "accepted" value="Decline"> </p>
+
+      <% if @decline %>
+        <p class = "error"><%= @decline %></p>
+      <% end %>
+
+    </form>
+    <!-- This is a simple terms and conditions page. It can be found through a link on registration, and must be accepted before the user can register.
+    If they decline, an error message appears on the terms page. If accepted, redirect to the register page --> 
+
+
+  </body> 
+
+
+
+</html>

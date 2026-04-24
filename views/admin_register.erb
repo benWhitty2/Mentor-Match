@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Register for admins</title>
+    <link rel="stylesheet" href="register.css">  
+    <link rel="stylesheet" href="style.css"> 
+    <meta name = "author" content="Can John Mcdonald">
+    <nav>
+    <div class = "menu">
+      <a href= "" id = "menuButton">Menu</a>
+      <div class = "ddcontent">
+        <a href = "/index">Home</a>
+        <a href = "/register">Register</a>
+        <a href = "/profile">Profile</a> 
+        <a href = "/admin_register">Register an admin</a>
+        <a href = "/view-resets">Resets</a>
+        <a href = "/admin_withdrawals">Withdrawals</a>
+        <a href = "/admin_flagging">Flag a user</a>
+      </div>
+    </div>
+      <a href = "/login" id = "loginButton"><%= @loginSignOut%></a>
+    </nav>
+    <header>
+      <h1>UniConnect</h1>
+    </header>
+  </head>
+  <body>
+  <% if !@form_was_submitted || @submission_error %> 
+  <form method="post" action="/admin_register_post">
+    <p id="register_title"> Register <p>
+    <h3>Please enter the details for the new admin</h3>
+    <p>
+    <br>
+    <% if @submission_error && @form_was_submitted %>
+    <p><br><strong class="error">Please correct the errors below</strong></p>
+    <% end %>
+    <p>
+      Enter the special password to be used: <input type="password" name="password" value="" />
+      <% if !@password_error.nil? %>
+        <br /><strong class="error"><%= @password_error %></strong>
+      <% end %>
+      <% if !@password_empty_error.nil? %>
+        <br /><strong class="error"><%= @password_empty_error %></strong>
+      <% end %>
+    </p>
+    <p>
+          Enter a email to be used by the new admin: <input type="email" name="email_address" placeholder="example@sheffield.ac.uk" value="<%= h @admin.email %>" />
+      <% if !@email_address_error.nil? %>
+        <br /><strong class="error"><%= @email_address_error %></strong>
+      <% end %>
+      <% if !@same_email_address_error.nil? %>
+        <br /><strong class="error"><%= @same_email_address_error %></strong>
+      <% end %>
+    </p> 
+    <p><input type="submit" id="create_account" value="Create account"></p>   
+  
+  </form>
+  <% end %>
+  </body>
+</html>

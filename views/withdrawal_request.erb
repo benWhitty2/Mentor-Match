@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Withdrawal</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name = "author" content = "Sophie Thompson">
+    <meta name = "author" content = "Matthias Jones">
+    <%= erb :"common/header" %>
+  </head>
+
+  <body>
+  <div  class = "wrapper">
+    <h2>Withdrawal Request</h2>
+    <form action="/withdrawal_request" method="post">
+      </br></br>
+      <div class = "username" >
+        <label for = "username" >Mentee Username:</label>
+      <input type = "text" id = "username" name = "username" >
+      </div>
+      </br>
+      <label for = "reason" class = "withdrawal">Reason:</label>
+      <textarea  id = "reason" name = "reason" class = "withdrawal" ></textarea>
+      </br>
+      <input class = "submit" type = "submit" value="Submit">
+    </form>
+  </div>
+  <% if @empty_error %>
+    <script>
+      alert("<%= @empty_error %>");
+    </script>
+  <% end %>
+  <% if @error_message %>
+    <script>
+      alert("<%= @error_message %>");
+    </script>
+  <% end %>
+  </body> 
+
+
+
+</html>

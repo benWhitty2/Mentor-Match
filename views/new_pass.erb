@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <title>new password</title>
+    <link rel="stylesheet" href="login.css">
+    <meta name="author" content="Ben Whittaker">
+    <%= erb :"common/header" %>
+</head>
+
+<body>
+  <section>
+    <div class="centerOfScreen">
+        <p>set your new password</p>
+        <form method="post" action="new-pass">
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="password"><br>
+            <label for="newPassword">new password</label><br><br>
+            <input type="password" id="newPassword" name="newPassword" placeholder="newPassword"><br>
+            <br>
+            <input type="password" id="checkPassword" name="checkPassword" placeholder="checkPassword"><br>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+        <strong class="error"><%=@new_pass_response%></strong>
+    </div>
+  </section>
+</body>
+
+</html>

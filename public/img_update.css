@@ -1,0 +1,113 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  background-color: #76608A;
+}
+
+.window {
+  width: 360px;
+  height: 600px;
+  background-color: white;
+  border-radius: 75px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+    text-align: center;
+    margin-top: 5%;
+    font-weight: normal;
+}
+
+p {
+    margin-top: 3%;
+    margin-left: 8%;
+}
+input[type='file'] {
+  display: none; 
+}
+::file-selector-button {
+  font-size: initial; 
+}
+ul {
+    list-style: none;
+    display: inline;
+    padding-left: 7%;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    margin-left: 5%;
+
+}
+
+button, input {
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1%;
+    margin-top: 6%;
+    border-radius: 0%;
+}
+
+
+img.roundedLarge {
+    margin-top: 5%;
+    margin-left: 37.5%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+img.roundedSmall {
+    margin-top: 3%;
+    margin-left: 8%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+
+strong.error {
+  color: red;
+
+}
+
+.button {
+  padding: 10px 25px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #009a9a;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 5px #00cdcd;
+  text-decoration: none;
+}
+
+.button:hover {
+background-color: #008080;
+}
+
+.button:active {
+  background-color: #008080;
+  box-shadow: 0 3px #004d4d;
+  transform: translateY(1px);
+}
+
+.link {
+  text-align: center;
+}

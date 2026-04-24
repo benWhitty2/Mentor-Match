@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Profile</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="profile.css">
+  <meta name = "author" content="Sophie Thompson">
+  <%= erb :"common/header" %>
+</head>
+<body>
+  <div class="profile-wrapper">
+  <div class="profile-box">
+  <div class="imgs">
+    <img src="<%= @user[7] %>" width="200" height="200">
+    <% if @userType == Mentor && @user[8] %>
+        <img src="images/em_badge.png" class = "badge" width="50" height="50">
+    <% end %>
+    <a href="/update" name="link">Edit Profile Photo</a>
+    
+  </div>
+    <% if !@user.nil? %>
+      <h3><%= @user[0] %></h3>
+      <h5>Bio: <%= @user[1] %> </h5>
+      <p id="about-user" rows="20" cols="80" disabled>
+      Username: <input type="text" name="username" value="<%= @user[2] %>" readonly /> <br>
+      Gender: <input type="text" name="gender" value="<%= @user[3] %>" readonly /> <br>
+      Date of Birth: <input type="text" name="date_of_birth" value="<%= @user[4] %>" readonly /> <br>
+      Course: <input type="text" name="course" value="<%= @user[5] %>" readonly /> <br>
+      Year of Study: <input type="number" name="year_of_study" value="<%= @user[6] %>" readonly /> <br>
+      <a href="new-pass" name = "link">Change Password</a>
+      <a href="/edit_profile" name = "link">Edit Profile</a>
+      <a href="withdrawal_request" name = "link">Withdrawal Request</a>
+      </p>
+    <% end %>
+    <% if @user.nil? %>
+      <h3>Default User</h3>
+      <p id="about-user" rows="20" cols="80" disabled>
+      Username: <input type="text" name="username" value="Username" readonly /> <br>
+      Gender: <input type="text" name="gender" value="Other" readonly /> <br>
+      Date of Birth: <input type="text" name="date_of_birth" value="20/12/2000" readonly /> <br>
+      Course: <input type="text" name="course" value="Computer Science" readonly /> <br>
+      Year of Study: <input type="number" name="year_of_study" value="1" readonly /> <br>
+    </p>
+    <% end %>
+  
+  </div>
+  </div>
+  
+</body>
+<!--This is the profile page, where user details are displayed. If the user is an experienced mentor a badge appears on their pfp.
+It shows the users username, password (encrypted), course, and year of Study.
+in case of an error, there is a default user. This is only a back up, as if the profile link is clicked on and the user is not logged in,
+it will redirect to the login page. -->
+
+</html>

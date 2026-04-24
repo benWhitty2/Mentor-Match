@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Profile</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="edit_profile.css">
+  <%= erb :"common/header" %>
+</head>
+<body>
+  <% if !@userType.nil? %>
+
+    <div class="form-wrapper">
+    <h3>Edit Profile Details</h3>
+    <div class="form-box">
+    <p><br/><strong><%= @empty_error%></strong></p>
+    <form method = "post" action = "/edit_profile">
+        <label for="forename">Forename</label><br>
+        <input type="text" id="forename" name="forename" value="<%= @first_name %>" ><br>
+        <label for="surname">Surname</label><br>
+        <input type="text" id="surname" name="surname" value="<%= @surname %>"><br>
+        <label for="desc">Bio</label><br>
+        <textarea id="desc" name="desc" rows="10" cols="40"><%= @bio %></textarea><br>
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="Male" <% if @gender == "Male" %>selected<% end %>>Male</option>
+          <option value="Female" <% if @gender == "Female" %>selected<% end %>>Female</option>
+          <option value="Other" <% if @gender == "Other" %>selected<% end %>>Other</option>
+        </select><br>
+        <label for="course">Course</label><br>
+        <input type="text" id="course" name="course" value="<%= @course %>"><br>
+        <% if @userType == "Mentor" %>
+          <label for="year_of_study">Year of Study</label><br>
+          <input type="number" id="year_of_study" name="year_of_study" min="2" max="10" value="<%= @year_of_study %>"><br>
+        <% else %>
+          <input type="hidden" name="year_of_study" value="1">
+        <% end %>
+        <input type="submit" value="Save changes">
+        <div class="error">
+        <% if @integer_error%>
+          <p><br /><strong><%= @integer_error %></strong></p>
+        <% end %>
+        </div>
+    </form>
+    </div>
+    </div>
+
+  <% end %>
+</body>
+<!-- This page enables the user to edit their profile details, excluding password, and have it saved and
+automatically uploaded to the profile page -->
+
+</html>

@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <title>reset password</title>
+    <link rel="stylesheet" href="login.css">
+    <meta name="author" content="Ben Whittaker">
+    <%= erb :"common/header" %>
+</head>
+
+<body>
+  <section>
+    <div class="centerOfScreen">
+        <p>request a password reset</p>
+        <form method="post" action="reset-pass-attempt">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="username" value=<%= @username%>><br>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+        <strong class="error"><%= @rest_pass_respons%></strong>
+    </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+.withdrawals_table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 5% 2%;
+  font-size: 1.1em;
+  width: 85%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  table-layout: fixed;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+}
+
+.withdrawals_table thead tr {
+  background-color: #804cb0;
+  color: #efefef;
+  text-align: left;
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+}
+
+
+
+
+.withdrawals_table th,
+.withdrawals_table td {
+  padding: 1.5% 1.5%;
+
+}
+
+
+.withdrawals_table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+
+
+.withdrawals_table td:nth-child(1),
+.withdrawals_table th:nth-child(1) {
+  width: 10%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.withdrawals_table td:nth-child(2),
+.withdrawals_table th:nth-child(2), 
+.withdrawals_table td:nth-child(3),
+.withdrawals_table th:nth-child(3) {
+  width: 7.5%;
+}
+
+.withdrawals_table td:nth-child(2),
+.withdrawals_table td:nth-child(3) {
+  text-align: right;
+}
+.withdrawals_table td:nth-child(4),
+.withdrawals_table th:nth-child(4) {
+  width: 10%;
+}
+
+
+.withdrawals_table td:nth-child(5),
+.withdrawals_table th:nth-child(5) {
+  width: 45%;
+}
+
+.withdrawals_table td:nth-child(6),
+.withdrawals_table th:nth-child(6), 
+.withdrawals_table td:nth-child(7),
+.withdrawals_table th:nth-child(7) {
+  width: auto;
+
+}
+.withdrawals_table td:nth-child(6),
+.withdrawals_table td:nth-child(7) {
+  border-left: 1px solid #dddddd;
+} 
+.withdrawals_table tbody tr:nth-of-type(even) {
+  background-color: #ededed;
+}
+
+.withdrawals_table tbody tr:last-of-type {
+    border-bottom: 2px solid #804cb0;
+}
+

@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">  
+    <link rel="stylesheet" href="style.css"> 
+    <meta name = "author" content="Can John Mcdonald">
+    
+  </head>
+
+
+  <body>
+    <nav>
+    <div class = "menu">
+      <a href= "" id = "menuButton">Menu</a>
+      <div class = "ddcontent">
+        <a href = "/index">Home</a>
+        <a href = "/register">Register</a>
+        <a href = "/profile">Profile</a> 
+      </div>
+    </div>
+      <a href = "/login" id = "loginButton"><%= @loginSignOut%></a>
+    </nav>
+    <header>
+      <h1>UniConnect</h1>
+    </header>
+
+
+  <% if !@form_was_submitted || @submission_error %> 
+  <form method="post" action="/register_post">
+    <p id="register_title"> Register <p>
+    <h3>Please enter your personal information</h3>
+    <p>
+    <p> Select your role </p>
+      <select class="role_select" name="role">
+        <% @role_options.each do |key, value| %>
+          <option value="<%= key %>" <% if @role == key %>selected<% end %>><%= value %></option>
+        <% end %>
+      </select>
+    </p>
+    <br>
+    <% if @submission_error && @form_was_submitted %>
+    <p><br><strong class="error">Please correct the errors below</strong></p>
+    <% end %>
+    <% if !@role_error.nil? %>
+      <br /><strong class="error"><%= @role_error %></strong>
+      <% end %>
+    <% if !@submission_error && !@form_was_submitted %>
+      <br>
+    <% end %>
+    
+    <p>
+      Enter a username: <input type="text" name="username" value="<%= h @user.username %>" />
+      <% if !@username_error.nil? %>
+        <br /><strong class="error"><%= @username_error %></strong>
+      <% end %>
+      <% if !@same_username_error.nil? %>
+        <br /><strong class="error"><%= @same_username_error %></strong>
+      <% end %>
+    </p>
+    <p>
+      Enter a password: <input type="password" name="password" value="" />
+      <% if !@password_empty_error.nil? %>
+        <br /><strong class="error"><%= @password_empty_error %></strong>
+      <% end %>
+      <% if !@password_error.nil? %>
+        <br /><strong class="error"><%= @password_error %></strong>
+      <% end %>
+    </p>
+    <p>
+      Confirm password: <input type="password" name="confirm_password" value="" />
+      <% if !@confirm_password.nil? %>
+        <br /><strong class="error"><%= @confirmation_empty_error %></strong>
+      <% end %>
+      <% if !@confirmation_error.nil? %>
+        <br /><strong class="error"><%= @confirmation_error %></strong>
+      <% end %>
+    </p>
+    <p>
+      Enter your university email: <input type="email" name="email_address" placeholder="example@sheffield.ac.uk" value="<%= h @user.email %>" />
+      <% if !@email_address_error.nil? %>
+        <br /><strong class="error"><%= @email_address_error %></strong>
+      <% end %>
+      <% if !@same_email_address_error.nil? %>
+        <br /><strong class="error"><%= @same_email_address_error %></strong>
+      <% end %>
+    </p>  
+    <% if ($termsAccepted.nil?) %>
+    <p> 
+      <input type="checkbox" id="terms_conditions" name="terms_conditions" value= "terms_conditions" required/>
+      <label for="terms_conditions"> By signing up you agree to our <a href="terms"> terms and conditions </a></label><br>
+    </p>
+    <% end %>
+    <% if ($termsAccepted) %>
+    <p> 
+      <input type="checkbox" id="terms&conditions" name="terms_conditions" value= "terms&conditions" required checked/>
+      <label for="terms&conditions"> By signing up you agree to our <a href="terms"> terms and conditions </a></label><br>
+    </p>
+    <% end %>
+    <p> Already registered?<a href="login"> Log in. </a></p>
+    <p><input type="submit" id="create_account" value="Create account"></p>   
+  </form>
+  <% end %>
+  </body>
+</html>

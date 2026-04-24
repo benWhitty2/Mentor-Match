@@ -1,0 +1,44 @@
+.centerOfScreen {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 10vh;
+  
+}
+
+.centerOfScreen form{
+  height: auto;
+}
+
+.regButton {
+  width: auto;
+  height: auto;
+  font-size: small;
+  border-radius: auto;
+  background-color: gray;
+}
+
+input{
+  width: 20vw;
+}
+#submit{
+  width: 8vw;
+}
+div:not(.menu, .ddcontent){
+  outline: 1px solid black;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+
+
+section {
+  background-image: url(/images/placeholder-image.jpg);
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  height: 100%;
+}

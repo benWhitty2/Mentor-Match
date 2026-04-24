@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css"> 
+  </head>
+    <nav>
+    <div class = "menu">
+      <a href= "" id = "menuButton">Menu</a>
+      <div class = "ddcontent">
+        <a href = "/index">Home</a>
+        <a href = "/register">Register</a>
+        <% if @userType == "Mentor" %>
+          <a href = "/view-applications">Applications</a>
+          <a href = "/view-waitinglist">WaitingList</a>
+        <% end %> 
+        <% if @userType == "Mentee" %>
+          <a href = "/search_page">SearchPage</a>
+        <% end %> 
+        <% if @userType == "Admin" %>
+          <a href = "/admin_register">Register an admin</a>
+          <a href = "/view-resets">Resets</a>
+          <a href = "/withdrawals">Withdrawals</a>
+          <a href = "/admin_flagging">Flag a user</a>
+        <% end %>
+        <% if @userType == "Mentee" || @userType == "Mentor" %> 
+          <a href = "/profile">Profile</a>
+          <a href = "/edit_profile">Edit Profile</a>
+          <a href = "/view-match">Your Match</a>
+        <% end %>
+      </div>
+    </div>
+      <a href = "/login" id = "loginButton"><%= @loginSignOut%></a>
+    </nav>
+    <header>
+      <h1>UniConnect</h1>
+    </header>
+</html>

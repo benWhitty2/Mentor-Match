@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.white {
+  background-color: white;
+}
+
+
+nav {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #76608A;
+    width: 100%;
+    height: 10%;
+}
+
+nav a {
+    margin: 1%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    width: 5%;
+    height: 50%;
+    line-height: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+header {
+    background-color: #E1D5E7;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #453951;
+    border: solid black;
+    border-width: 0.5px 1px 1px 1px;
+    padding: 0% 0% 0% 2%;
+    height: 15%;
+    display: flex;
+    font-size: xxx-large;
+    align-items: center;
+}
+
+img {
+  margin: 3%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  margin-top: auto;
+    padding: 2% 0% 1% 5%;
+    text-decoration: underline;
+
+}
+
+p {
+    padding: 0% 0% 1% 5%
+    
+}
+
+section {
+  background-image: url(/images/placeholder-image.jpg);
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  height: 100%;
+}
+
+button {
+    display: block;
+    background-color: #76608A;
+    color: white;
+    width: 15%;
+    height: 90%;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    border-radius: 10px;
+}
+
+
+div {
+  width: 100%;
+}
+
+form  {
+  height: 10%;
+  width: 100%;
+}
+
+#menuButton {
+    float: left;
+}
+
+#loginButton {
+    float: right;
+    width: fit-content;
+    padding-right: 2px; 
+    padding-left: 2px;
+}
+
+#signUpButton {
+  height: fit-content;
+  padding-bottom: 3px; 
+  padding-top: 3px;
+}
+
+
+/*making a drop down menu, all classes, so no clashes should occur*/
+.menu {
+  display: inline-block;
+  position: relative;
+
+}
+
+.ddcontent {
+  position: absolute;
+  color: white;
+  padding: 20px 20px 20px 20px;
+  width: 20%;
+  display: none;
+  line-height: 1.2;
+}
+
+.ddcontent a {
+  display: block;
+  background-color: #76608A;
+  padding: 10px;
+  text-align: center;
+  height: max-content;
+  white-space: normal;  
+  width: 40%;
+  line-height: 1.1;
+}
+
+.menu:hover .ddcontent {
+  display: block;
+}
+
+#loginButton:hover .ddcontent {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  line-height:1.1;
+  height: max-content;
+  padding:10px;
+}
+
+.withdrawal {
+  padding: 20px;
+  width: 450px ;
+  height: 150px;
+  margin: auto;
+  display: block;
+}
+
+label.withdrawal {
+  height: 1em;
+  padding: 5px;
+} 
+
+.username {
+  padding: 20px;
+  margin: auto;
+  display: block;
+  align-items: center;
+  width: 450px;
+  height: 1em;
+}
+
+.username > label {
+  float: left;
+}
+
+.username input {
+  width: 100%;
+}
+
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.submit {
+    display: block;
+    background-color: #76608A;
+    color: white;
+    width: 15%;
+    height: 90%;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    border-radius: 10px;
+}

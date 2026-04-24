@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <title>veiw application page</title>
+    
+    <link rel="stylesheet" href="login.css">
+
+    <meta name="author" content="Ben Whittaker">
+    <%= erb :"common/header" %>
+</head>
+
+
+<body>
+  <section>
+    <div clas 6s="centerOfScreen">
+    <h2>current applications</h2>
+    <br>
+      <% if @applicants.count > 0 %>
+        <table>
+          <tr>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Date of Birth</th>
+          <th>Bio</th>
+        </tr>
+    <% @applicants.each do |mentee| %>
+      <tr>
+        <td><%= h mentee[0] %></td>
+        <td><%= h mentee[1] %></td>
+        <td><%= h mentee[2] %></td>
+        <td><%= h mentee[3] %></td>
+        <td>
+          <form action="accept-application" method="post">
+            <button name="accepted" value=<%= h mentee[4]%> class="regButton">Accept</button>
+          </form>
+        </td>
+        <td>
+          <form action="reject-application" method="post">
+            <button name="rejected" value=<%= h mentee[4]%> class="regButton">Reject</button>
+          </form>
+        </td>
+        <td>
+          <form action="report-application" method="post">
+            <button name="reported" value=<%= h mentee[4]%> class="regButton">Report</button>
+          </form>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+      <% else %>
+        <p>There are no current applications</p>
+      <% end %>
+    </div>
+  </section>
+</body>

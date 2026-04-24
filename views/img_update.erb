@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Update Profile Image</title>
+        <link rel = "stylesheet" href = "img_update.css">
+        <meta name = "author" content = "Matthias Jones">
+    </head>
+    <body>
+        <div class = "window">
+            <h2>Select Profile Picture</h2>
+            <img src=<%= @img_src %> alt="placeholder-image" class="roundedLarge">
+            <p>Custom</p>
+            <img src=<%= @img_src %> alt="placeholder-image" class="roundedSmall">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                
+                <ul>
+                    <li>
+                      <button type = "button"><label for = "file">Upload File</label></button>
+                      <input type="file" name="file" id="file" accept="image/png, image/jpeg">
+                    </li>              
+                    <li>
+                        <input type="submit" value= "Save">
+                    </li>
+                </ul>
+                
+            </form>
+            <br> <br>
+            <a href="/profile" class="link">Profile</a>
+
+            <% if !@filesize_error.nil? %>
+              <br><p><strong class = "error"><%= @filesize_error %></strong></p>
+            <% end %>
+        </div>
+    </body>
+<!-- This page allows the user to upload an image under the file size of 5MB to have as their new profile photo. 
+Once the user clicks upload file and then save, this will be saved in the database as their photo. From there, the user can 
+click the profile link to go back and see their newly updated photo -->
+</html>

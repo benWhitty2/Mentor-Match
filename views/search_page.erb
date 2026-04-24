@@ -1,0 +1,36 @@
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="search_page.css">
+    <meta name = "author" content="Aayan Akhter">
+    <%= erb :"common/header" %>
+</head>
+<div class="search-container">
+  <form method="get" action="/search_page" class="search-form">
+    <input type="text" name="user_search" placeholder="Search by name or course..." value="<%= h @user_search %>">
+    <button type="submit">Search</button>
+  </form>
+</div>
+<% if @mentors.count > 0 %>
+  <div class="profiles-container">
+    <% @mentors.each do |mentor| %>
+  <div class="profile-card">
+    <h2><%= h mentor[:first_name] %> <%= h mentor[:surname] %></h2>
+    <p><strong>Gender:</strong> <%= h mentor[:gender] %></p>
+    <p><strong>Date of Birth:</strong> <%= h mentor[:date_of_birth] %></p>
+    <p><strong>Course:</strong> <%= h mentor[:course] %></p>
+    <p><strong>Year:</strong> <%= h mentor[:year_of_study] %></p>
+    <p><strong>Bio:</strong> <%= h mentor[:bio] %></p>
+    <% if @already_applied_or_matched.include?(mentor[:id]) %>
+      <div class="matched-indicator">✓ Matched</div>
+    <% else %>
+      <form action="/match" method="POST">
+        <input type="hidden" name="mentor_id" value="<%= h mentor[:id] %>">
+        <button class="match-btn" type="submit">Apply</button>
+      </form>
+    <% end %>
+  </div>
+<% end %>
+  </div>
+<% else %>
+  <p>Your search revealed no users.</p>
+<% end %>

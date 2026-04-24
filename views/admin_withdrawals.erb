@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="withdrawals.css">
+    <meta name = "author" content = "Matthias Jones">
+    <%= erb :"common/header" %>
+  </head>
+  <body>
+  <% if @withdrawals.count > 0 %>
+    <table class="withdrawals_table">
+      <thead>
+        <tr>
+          <th>Submit Time</th>
+          <th>Mentee ID</th>
+          <th>Mentor ID</th>
+          <th>Requested</th>
+          <th>Withdrawal Message</th>
+          <th>      </th>
+          <th>      </th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @withdrawals.each do |withdrawal| %>
+        <tr>
+          <td><%= h withdrawal.time_stamp%></td>
+          <td><%= h withdrawal.mentee_id %></td>
+          <td><%= h withdrawal.mentor_id %></td>
+          <td><%= h withdrawal.requested_by %></td>
+          <td><%= h withdrawal.msg %></td>
+          <td>
+            <form method = "post" action = "/accept">
+              <input type = "hidden" name = "id" value = "<%= h withdrawal.id %>" />
+              <input type = "hidden" name = "mentee" value = "<%= h withdrawal.mentee_id %>" />
+              <input type = "submit" value = "accept" />
+            </form>
+          </td>
+          <td>
+            <form method = "post" action = "/reject">
+              <input type = "hidden" name = "id" value = "<%= h withdrawal.id %>" />
+              <input type = "hidden" name = "mentee" value = "<%= h withdrawal.mentee_id %>" />
+              <input type = "submit" value = "reject" />
+            </form>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+  <% end %>
+
+  
+  </body>
+
+
+</html>

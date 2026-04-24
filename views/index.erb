@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name = "author" content="Matthias Jones">
+    <%= erb :"common/header" %>
+  </head>
+
+  <body>
+    <section>
+      <h3 class = "white">About The Site</h3>
+      <p class = "white">Welcome to our Official Sheffield Student Tutor matching site. We aim to heighten the 
+      learning experience for our students by offering a place to pick your mentors based on your preferences. 
+      Once you are registered and your profile is up to date, you are able to browse our list of available mentors 
+      and select the ones you believe will suit your needs. Mentors are able to select many mentees up to their capacity. 
+      This experience will improve your studies as mentees, and provide good work experience for mentors. Happy Matching! </p>
+
+
+        <form id = "signUpButton" style = "display: inline" action = "/register" method = "get" class = "white">
+          <button>Sign Up Now</button>
+        </form>
+    </section>
+
+
+  </body> 
+
+<!-- A simple home and starting page for the website. It details the expectations for the website . A sign up button is available the will 
+redirect the user to the register page -->
+
+</html>

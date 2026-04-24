@@ -1,0 +1,43 @@
+img{
+  border-radius:50%;
+}
+
+.profile-wrapper{
+  display:flex;
+  width:100%;
+  align-items:center;
+  flex-direction: column;
+  padding: 10px 10px 10px 10px;
+}
+
+.profile-box{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width:60%;
+  background-color: #E1D5E7;
+  border-radius:8px;
+}
+
+h3{
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.about-user{
+  border-radius:6px;
+  background-color: white;
+}
+
+.imgs {
+  position: relative;
+  width:200px;
+  height:250px;
+}
+
+.badge {
+  position: absolute;
+  top:0;
+  right:0;
+}
