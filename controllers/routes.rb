@@ -336,6 +336,7 @@ end
 get "/search_page" do
   if session["logedIn"].class == Mentee && !Match.where(mentee_id: session["logedIn"].id).any?
     @loginSignOut = loginButtonStatus
+    @userType = session["logedIn"].class.to_s
     @user_search = params.fetch("user_search", "").strip
 
     @current_user = session["logedIn"]
